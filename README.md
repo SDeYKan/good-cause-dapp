@@ -4,3 +4,8 @@ It's very simple:
 -🌐 Then connect it with the DApp
 -✔️ You're done! 
 -❤️ You can now upload a request or help other people by donating to them.
+
+You can test this DApp right now! Go to:
+https://sdeykan.github.io/good-cause-dapp/ 
+or
+Click the "github-pages" environment and click "view deployment"!
