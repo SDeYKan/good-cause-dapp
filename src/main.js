@@ -43,8 +43,8 @@ async function approve(_price)
 {
     // Show an approve request for cUSD token at a defined quantity
     const cUSDContract = new kit.web3.eth.Contract(erc20Abi, cUSDContractAddress) // Declare cUSD contract as variable
-    const result = await cUSDContract.methods.approve(MPContractAddress, _price).send({ from: kit.defaultAccount }) // Send approve request to wallet
-    return result
+    return await cUSDContract.methods.approve(MPContractAddress, _price).send({ from: kit.defaultAccount }) // Send approve request to wallet
+    
 }
 
 const getBalance = async function()
@@ -175,7 +175,7 @@ document
         try
         {
             // Try to add the request using the previously created array as the parameters
-            const result = await contract.methods.newRequest(...params).send({ from: kit.defaultAccount })
+             await contract.methods.newRequest(...params).send({ from: kit.defaultAccount })
         }
         catch(error)
         {
@@ -245,7 +245,7 @@ document
             try
             {
                 // Call the delete function, note it will only work as intended if the caller is the owner of the request
-                const result = await contract.methods.deleteRequest(index).send({from: kit.defaultAccount})
+                await contract.methods.deleteRequest(index).send({from: kit.defaultAccount})
                 // If successful, show notification and reload requests
                 notification(`🎉 Success! Request deleted. 🎉`)
                 processRequests()
